@@ -1,0 +1,19 @@
+{
+  "name": "reddit-code-exchange",
+  "version": "1.0.0",
+  "description": "Simple proxy for handling reddit OAuth2 code exchange for installed applications that should not store secrects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raymond May Jr.",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^2.1.1",
+    "koa": "^0.18.0",
+    "koa-body": "^1.0.0",
+    "koa-request": "^1.0.0",
+    "koa-router": "^4.1.0",
+    "require-directory": "^2.0.0"
+  }
+}

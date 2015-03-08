@@ -1,8 +1,10 @@
+include config/env.source
+
 npm:
 	npm install
 
 setup:npm
-	cp config.sample.json config.json
+	cp env.source.sample env.source
 
 dev:
 	DEBUG=rce:* nodemon --harmony index.js

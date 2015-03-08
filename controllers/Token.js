@@ -1,12 +1,12 @@
 'use strict';
 
 var debug = require('debug')('rce:controllers:Token');
-var config = require('../config.json');
+var config = require('../config/config');
 var request = require('koa-request');
 
-function postOptions () {
+function postOptions (context) {
 
-  var refreshToken = this.request.body.refreshToken
+  var refreshToken = context.request.body.refreshToken;
   var clientID = config.clientID;
   var clientSecret = config.clientSecret;
   return {
@@ -24,7 +24,7 @@ function postOptions () {
 
 module.exports = function *AccessToken () {
 
-  var response = yield request.post(postOptions.call(this));
+  var response = yield request.post(postOptions(this));
   debug(response.statusCode, response.body);
   this.status = response.statusCode;
   this.body = response.body;

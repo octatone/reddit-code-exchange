@@ -9,7 +9,7 @@ It provides two `POST` endpoints:
 
     make setup
 
-Edit `config.json` to your reddit client id, secrect and redirect uri.
+Edit `env.source` to your reddit client id, secrect and redirect uri.
 
     make dev
 

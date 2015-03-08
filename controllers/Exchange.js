@@ -1,10 +1,12 @@
+'use strict';
+
 var debug = require('debug')('rce:controllers:Exchange');
-var config = require('../config.json');
+var config = require('../config/config');
 var request = require('koa-request');
 
-function postOptions () {
+function postOptions (context) {
 
-  var code = this.request.body.code;
+  var code = context.request.body.code;
   var clientID = config.clientID;
   var clientSecret = config.clientSecret;
   return {
@@ -23,7 +25,7 @@ function postOptions () {
 
 module.exports = function *Exchange () {
 
-  var response = yield request.post(postOptions.call(this));
+  var response = yield request.post(postOptions(this));
   debug(response.statusCode, response.body);
   this.status = response.statusCode;
   this.body = response.body;

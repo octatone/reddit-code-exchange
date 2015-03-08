@@ -4,8 +4,9 @@
   "description": "Simple proxy for handling reddit OAuth2 code exchange for installed applications that should not store secrets.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --harmony index.js"
   },
+  "engine": "node 0.12.0",
   "author": "Raymond May Jr.",
   "license": "MIT",
   "dependencies": {

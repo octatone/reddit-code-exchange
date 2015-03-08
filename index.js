@@ -17,14 +17,14 @@ app.use(router(app));
 app.post(
   '/exchange',
   koaBody,
-  middlewares.AllowedOrigins,
+  middlewares.AllowedOrigin,
   controllers.Exchange
 );
 
 app.post(
   '/token',
   koaBody,
-  middlewares.AllowedOrigins,
+  middlewares.AllowedOrigin,
   controllers.Token
 );
 
